@@ -1,6 +1,6 @@
 // 3.1 Variables and Mutability
 
-pub fn run() {
+pub fn _run() {
   /*
   this block of code doesn't compile because variables are immutable by default and so cannot be reassigned
   let x = 5;
