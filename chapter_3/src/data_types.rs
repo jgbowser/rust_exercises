@@ -1,7 +1,7 @@
 use std::io;
 // 3.2 Data Types
 
-pub fn run() {
+pub fn _run() {
     // Scalar Type: represents a single value.
     // 4 primary types: integers, floating-points, booleans, characters
 
