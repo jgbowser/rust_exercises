@@ -11,7 +11,7 @@ The main purpose of Ownership is to manage heap data (as opposed to stack data)
 we'll be exploring ownership by working with strings
 */
 
-pub fn run() {
+pub fn _run() {
     // Ownership rules:
     // 1. Each value in Rust has an owner
     // 2. There can only be one owner at a time

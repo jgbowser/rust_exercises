@@ -3,7 +3,7 @@
 // We don't want to have to pass through a value every time we use it in a function
 // but still want access to it later. Instead, we can provide a reference to a value.
 
-pub fn run() {
+pub fn _run() {
     // using reference instead of taking ownership
     // the '&' represent references to the variables (s1 and the function signature)
     let s1 = String::from("hello");
