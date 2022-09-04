@@ -3,7 +3,7 @@
 // you to reference a contiguous sequence of elements in a collection
 // In Rust, a slice is a kind of reference so it doesn't have ownership
 
-pub fn run() {
+pub fn _run() {
     /*
     Here’s a small programming problem: write a function that takes a
     string of words separated by spaces and returns the first word it finds

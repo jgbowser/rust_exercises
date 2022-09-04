@@ -5,5 +5,5 @@ mod slice;
 fn main() {
     // ownership::run();
     // references_borrowing::run();
-    slice::run();
+    // slice::run();
 }
