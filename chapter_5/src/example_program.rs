@@ -1,7 +1,7 @@
 // 5.2 Example Program Using Structs
 // Calculate the area of a rectangle
 
-pub fn run() {
+pub fn _run() {
     let width = 30;
     let height = 50;
 
