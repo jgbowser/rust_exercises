@@ -2,7 +2,7 @@
 // Structs are like tuples where you name the values (they're objects)
 // properties of a struct are called "fields"
 
-pub fn run() {
+pub fn _run() {
     //defined using the "struct" keyword and provide the field names and types
     struct User {
         active: bool,
