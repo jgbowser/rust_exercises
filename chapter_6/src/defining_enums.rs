@@ -1,7 +1,7 @@
 // 6.1 Defining Enums
 // a way of saying a value is one of a possible set of values
 
-pub fn run() {
+pub fn _run() {
     // an example using IP Address types (4 or 6)
     enum IpAddrKind { // notice the lack of snake case here
         V4,
