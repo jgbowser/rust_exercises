@@ -1,6 +1,6 @@
 // 6.2 The Match Control Flow Construct
 
-pub fn run() {
+pub fn _run() {
     // a good analogy for thinking about `match` is a coin sorting machine
     #[derive(Debug)]
     enum UsState {
@@ -51,7 +51,7 @@ pub fn run() {
     }
 
     let five = Some(5);
-    let six = plus_one(five);
+    let _six = plus_one(five);
     let none = plus_one(None);
     println!("the value of five is: {:?}, the value of none is: {:?}", five, none);
 
