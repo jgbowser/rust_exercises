@@ -5,14 +5,14 @@
 // lets create a lib module that provides the functionality of a restaurant
 mod front_of_house {
     pub mod hosting {
-        pub fn add_to_waitlist() {}
-        fn seat_at_table() {}
+        pub fn _add_to_waitlist() {}
+        fn _seat_at_table() {}
     }
 
     mod serving {
-        fn take_order() {}
-        fn serve_order() {}
-        fn take_payment() {}
+        fn _take_order() {}
+        fn _serve_order() {}
+        fn _take_payment() {}
     }
 }
 
@@ -42,7 +42,7 @@ mod front_of_house {
 mod back_of_house {
     pub struct Breakfast {
         pub toast: String,
-        seasonal_fruit: String,
+        _seasonal_fruit: String,
     }
 
     pub enum Appetizer {
@@ -57,7 +57,7 @@ mod back_of_house {
         pub fn summer(toast: &str) -> Breakfast {
             Breakfast {
                 toast: String::from(toast),
-                seasonal_fruit: String::from("peaches"),
+                _seasonal_fruit: String::from("peaches"),
             }
         }
     }
@@ -78,6 +78,6 @@ pub fn eat_at_restaurant() {
     // this is different with enums, if you mark an enum as public
     //all it's variants will also be public
     // see the Appetizer enum in back_of_house above
-    let order1 = back_of_house::Appetizer::Soup;
-    let order2 = back_of_house::Appetizer::Salad;
+    let _order1 = back_of_house::Appetizer::Soup;
+    let _order2 = back_of_house::Appetizer::Salad;
 }

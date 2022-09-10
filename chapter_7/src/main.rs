@@ -1,3 +1,6 @@
+mod use_keyword;
+// Chapter 7: Modules, Crates, etc
+
 fn main() {
-    println!("Hello, world!");
+    use_keyword::run();
 }
