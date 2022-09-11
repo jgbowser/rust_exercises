@@ -5,7 +5,9 @@
 // need to be known at compile time
 
 mod vectors;
+mod strings;
 
 fn main() {
-    vectors::run();
+    // vectors::run();
+    strings::run();
 }

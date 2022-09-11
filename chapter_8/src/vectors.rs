@@ -2,7 +2,7 @@
 // Vec<t> : store multiple values in a single structure that puts all the values
 // next to each other in memory
 
-pub fn run() {
+pub fn _run() {
     // Creating a New Vector
     let v: Vec<i32> = Vec::new(); // providing type annotation here because we didn't provide initial values.
     println!("our vector created without initial values: {:?}", v);
