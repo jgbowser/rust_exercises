@@ -8,7 +8,7 @@
 
 // strings are implemented as a collection of bytes, plus some methods to provide
 // useful functionality when the bytes are interpreted as text.
-pub fn run() {
+pub fn _run() {
     /*
     What is a String?
     Rust only has 1 "string type" in the core, which is the "string slice" type: `str`,
