@@ -3,7 +3,7 @@
 // most errors aren't serious enough to require the program to crash, sometimes
 // failures are expected and can be easily handled
 
-pub fn run() {
+pub fn _run() {
     /*
     remember the Result type looks like:
     enum Result<T, E> {
