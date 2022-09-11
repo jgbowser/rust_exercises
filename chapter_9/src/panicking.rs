@@ -1,6 +1,6 @@
 // 9.1 Unrecoverable Errors with panic!
 
-pub fn run() {
+pub fn _run() {
     // cause a panic
     // panic!("crash and burn");
 
