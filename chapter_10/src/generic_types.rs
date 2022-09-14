@@ -1,6 +1,6 @@
 // 10.1 Generic Data Types
 
-pub fn run() {
+pub fn _run() {
     // In function Definitions
     // we start with 2 functions tha find the largest value for different types
     fn largest_i32(list: &[i32]) -> &i32 {

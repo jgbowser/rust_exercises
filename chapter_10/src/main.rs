@@ -1,6 +1,7 @@
 // Chapter 10 : Generic Types, Traits, and Lifetimes
 
 mod generic_types;
+mod traits;
 
 fn main() {
     // before we really dig into all this, lets first dig into removing duplication
@@ -38,5 +39,6 @@ fn main() {
 
     // In section 1 we'll use generics to reduce duplication even more
 
-    generic_types::run();
+    // generic_types::run();
+    traits::run();
 }
