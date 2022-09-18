@@ -3,7 +3,7 @@
 // A Trait defines functionality a particular type has, and can share with other types
 // we can use Traits to further constrain generic types to types that have certain behaviors
 
-pub fn run() {
+pub fn _run() {
     // Defining a Trait
     // A type's behavior consists of the methods we can call on that type.
     // Different types share the same behavior if we can call the same methods
