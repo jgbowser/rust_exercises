@@ -1,6 +1,6 @@
 // 13.1: Closures: Anonymous Functions that Capture Their Environment
 
-pub fn run() {
+pub fn _run() {
     /*
     Rust's closures are anonymous functions you can save in a variable or pass
     as arguments to other functions. You can create the closure in one place and
