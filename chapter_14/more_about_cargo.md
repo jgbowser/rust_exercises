@@ -274,3 +274,5 @@ The `cargo install` command allows us to install and use binary crates locally. 
 
 All binaries installed with `cargo install` are stored in the installation root's _bin_ folder. If you installed Rust using _rustup.rs_ and don't have any custom configurations, this directory will be _$HOME/.cargo/bin_. Ensure that directory is in your `$PATH` to be able to run programs that have been installed with `cargo install`.
 
+## Extending Cargo with Custom Commands
+Cargo is designed so you can extend it with new subcommands without having to modify Cargo. If a binary in your `$PATH` is named `cargo-something`, you can run it as if it was a Cargo subcommand by running `cargo something`. Custom commands like this are also listed when you run `cargo --list`. Being able to use `cargo install` to install extensions and then run them just like the built-in Cargo tools is a super convenient benefit of Cargo's design.
