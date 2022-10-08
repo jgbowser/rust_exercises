@@ -180,3 +180,93 @@ cargo yank --vers X.X.X
 you can undo `yank`s by adding the `--undo` flag
 
 ## Cargo Workspaces
+Cargo workspaces are a way to split a large library crate into many smaller related packages.
+
+### Creating a Workspace
+a _workspace_ is a set of packages that share the same _Cargo.lock_ and output directory. Inside this Chapter 14 folder we'll set up a basic workspace. We'll use one common way to structure the workspace, though there are many options. We'll have a workspace containing a binary and two libraries. The binary, which will provide the main functionality, will depend on the two libraries. One library will provide an `add_one` function, and a second library an `add_two` function. All three crates will be part of the same workspace. 
+
+Start by creating a new directory for the workspace
+
+```sh
+mkdir add
+cd add
+```
+(we're using _chapter\_14_ in this case)
+Now, we create a _Cargo.toml_ file that will configure the entire workspace. This file won't have a `[package]` section. Instead, it will start with a `[workspace]` section that will allow us to add members to the workspace by specifying the path to the package with our binary crate; in our example the path will be _adder_
+
+```
+[workspace]
+
+members = [
+    "adder",
+]
+```
+
+Next lets create the `adder` binary crate by running `cargo new` within the directory
+
+```sh
+cargo new adder
+```
+
+at this point our workspace looks like:
+
+```
+├── Cargo.lock
+├── Cargo.toml
+├── adder
+│   ├── Cargo.toml
+│   └── src
+│       └── main.rs
+└── target
+```
+
+The workspace has one _target_ directory at the top level that the compiled artifacts will be placed into; the _adder_ package doesn't have its own _target_ directory. we can run `cargo run` from the _chapter\_13_ level and it will build and run our code in the _adder_ crate.
+
+### Creating the Second PAckage in the Workspace
+Next, we'll create another member package in the workspace and call it `add_one`. Change the top-level _Cargo.toml_ to specify the _add\_one_ path in the `members` list:
+
+```
+[workspace]
+
+members = [
+    "adder",
+    "add_one",
+]
+```
+
+Then generate another library named `add_one`
+
+```sh
+cargo new add_one --lib
+```
+
+Now our _adder_ package can depend on our _add\_one_ package. First we need to add a path dependency on `add_one` to the _Cargo.toml_ file.
+
+```
+[dependencies]
+add_one = { path = "../add_one" }
+```
+
+Cargo doesn't assume that crates in a workspace will depend on each other, so we need to be explicit about the dependency relationships. 
+
+Next, let's use the `add_one` function in the `adder` crate. In _adder/src/main.rs_ we add a `use` line at the top to bring the new `add_one` library crate into scope. Then change the `main` function to call the `add_one` function
+
+Now we can build and run our code. We can specify which package in the workspace we want to run by using the `-p` argument and the package name with `cargo run`:
+
+```sh
+cargo run -p adder
+```
+
+#### Depending on an External Package in a Workspace
+Notice that the workspace only has a single _Cargo.lock_ file in the workspace, rather than one in every crate. This ensures that all crates are using the same version of all dependencies. If we add the `rand` package to the _adder/Cargo.toml_ and the _add\_one/Cargo.toml_ files, Cargo will resolve both of those to one version of `rand` and record that in the one _Cargo.lock_. Making all crates in the workspace use the same dependencies means the crates will always be compatible with each other.
+
+Adding some dependency in one of the crates results in that dependency showing up in the root _Cargo.lock_, but each individual package still needs to add it to it's _Cargo.toml_ file to make use of it.
+
+#### Adding a Test to the Workspace
+For another enhancement, let's add a test of the `add_one::add_one` function within the `add_one` crate
+
+Then we can run `cargo test` from the top-level directory to run tests for every crate in the workspace
+
+just like `cargo build` we can pass the `-p` flag to `cargo test` to only run the tests in a specific crate.
+
+## Installing Binaries with `cargo install`
