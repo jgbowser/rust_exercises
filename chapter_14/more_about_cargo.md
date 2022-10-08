@@ -270,3 +270,7 @@ Then we can run `cargo test` from the top-level directory to run tests for every
 just like `cargo build` we can pass the `-p` flag to `cargo test` to only run the tests in a specific crate.
 
 ## Installing Binaries with `cargo install`
+The `cargo install` command allows us to install and use binary crates locally. This isn't intended to replace system packages; it's meant to be a convenient way for Rust developers to install tolls that others have shared on crates.io. Note that you can only install packages that have binary targets. A _binary target_ is the runnable program that is created if the crate has a _src/main.rs_ file or another file specified as a binary, as opposed to a library target that isn't runnable on its own but is suitable for including within other programs. Usually crates will specify the target type in a README.
+
+All binaries installed with `cargo install` are stored in the installation root's _bin_ folder. If you installed Rust using _rustup.rs_ and don't have any custom configurations, this directory will be _$HOME/.cargo/bin_. Ensure that directory is in your `$PATH` to be able to run programs that have been installed with `cargo install`.
+
