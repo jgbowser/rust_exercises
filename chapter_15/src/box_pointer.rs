@@ -13,7 +13,7 @@ situations:
  - When you want to own a value and you care only that it's a type that implements
     a particular trait rather than being a specific type
 */
-pub fn run() {
+pub fn _run() {
     // Using a Box<T> to Store Data on the Heap
 
     // but first, Box syntax and interaction
