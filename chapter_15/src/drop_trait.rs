@@ -18,7 +18,7 @@ a value goes out of scope, and the compiler will insert this code automatically.
 As a result, we don't need to be as careful about placing cleanup code everywhere.
 */
 
-pub fn run() {
+pub fn _run() {
     /*
     We specify the code to run when a value goes out of scope by implementing the
     Drop trait. The Drop trait requires that we implement one method named drop
