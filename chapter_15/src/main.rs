@@ -29,8 +29,10 @@ We'll be covering the most common smart pointers:
 
 mod box_pointer;
 mod deref_trait;
+mod drop_trait;
 
 fn main() {
     // box_pointer::run();
-    deref_trait::run();
+    // deref_trait::run();
+    drop_trait::run();
 }

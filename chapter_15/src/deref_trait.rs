@@ -14,7 +14,7 @@ to work in ways similar to references. Then we'll look at Rust's deref coercion
 feature and how it lets us work with ref or smart pointers.
 */
 
-pub fn run() {
+pub fn _run() {
     // Following the Pointer to the Value
 
     /*
