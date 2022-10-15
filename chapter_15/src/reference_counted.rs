@@ -61,12 +61,12 @@ pub fn run() {
 
     let a = Rc::new(Cons(5, Rc::new(Cons(10, Rc::new(Nil)))));
     println!("count after creating a = {}", Rc::strong_count(&a));
-    let b = Cons(3, Rc::clone(&a));
+    let _b = Cons(3, Rc::clone(&a));
     println!("count after creating b = {}", Rc::strong_count(&a));
-    let c = Cons(4, Rc::clone(&a));
+    let _c = Cons(4, Rc::clone(&a));
     println!("count after creating c = {}", Rc::strong_count(&a));
     {
-        let d = Cons(6, Rc::clone(&a));
+        let _d = Cons(6, Rc::clone(&a));
         println!("count after creating d = {}", Rc::strong_count(&a));
     }
     println!("count after d goes out of scope = {}", Rc::strong_count(&a));

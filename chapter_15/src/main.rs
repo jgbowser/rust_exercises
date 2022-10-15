@@ -31,10 +31,12 @@ mod box_pointer;
 mod deref_trait;
 mod drop_trait;
 mod reference_counted;
+mod ref_cell;
 
 fn main() {
     // box_pointer::run();
     // deref_trait::run();
     // drop_trait::run();
-    reference_counted::run();
+    // reference_counted::run();
+    ref_cell::run();
 }
